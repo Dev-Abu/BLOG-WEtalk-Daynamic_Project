@@ -6,28 +6,11 @@ const chalk = require('chalk')
 
 const setMiddleware = require('./middleware/middleware')
 
-// import routes
-// const authRoutes = require('./routes/authRoute')
-// const dashboardRoutes = require('./routes/dashboardRoute')
+
 const setRoutes = require('./routes/routes')
-
-// // import middleware
-// const {bindUserWithRequest} = require('./middleware/authMiddleware')
-// const setLocals = require('./middleware/setLocals')
-
-// Playground routes: for testing
-//const validatorRoutes = require('./playground/validator')
-
-
 
 const MONGODB_URI = `mongodb+srv://${config.get('db-username')}:${config.get('db-password')}
 @cluster0.18nptvm.mongodb.net/?retryWrites=true&w=majority`
-
-// const store = new MongoDBStore({
-//     uri: MONGODB_URI,
-//     collection: 'mySessions',
-//     expires: 1000 * 60 * 60 * 24
-// });
 
 const app = express()
 
@@ -35,18 +18,6 @@ const app = express()
 app.set('view engine', 'ejs')
 app.set('views', 'views')
 
-
-
-// app.use('/auth', authRoutes)
-// app.use('/dashboard', dashboardRoutes)
-// //app.use('/playground', validatorRoutes) // for testing
-
-// app.get('/', (req, res, next) => {
-   
-//     res.json({
-//         massage:' hello world'
-//     })
-// })
 
 // Using middleware from middleware Directory
 setMiddleware(app)
