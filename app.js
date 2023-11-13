@@ -9,8 +9,10 @@ const setMiddleware = require('./middleware/middleware')
 
 const setRoutes = require('./routes/routes')
 
+// ------ Database connection ------Start
 const MONGODB_URI = `mongodb+srv://${config.get('db-username')}:${config.get('db-password')}
-@cluster0.18nptvm.mongodb.net/?retryWrites=true&w=majority`
+@cluster1.ngnf7wq.mongodb.net/?retryWrites=true&w=majority`
+// ------ Database connection ------End
 
 const app = express()
 

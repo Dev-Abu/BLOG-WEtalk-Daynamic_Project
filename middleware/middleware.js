@@ -8,9 +8,12 @@ const MongoDBStore = require('connect-mongodb-session')(session)
 const {bindUserWithRequest} = require('./authMiddleware')
 const setLocals = require('./setLocals')
 
+// ------ Database connection for authentication ------Start
 
 const MONGODB_URI = `mongodb+srv://${config.get('db-username')}:${config.get('db-password')}
-@cluster0.18nptvm.mongodb.net/?retryWrites=true&w=majority`
+@cluster1.ngnf7wq.mongodb.net/?retryWrites=true&w=majority`
+
+// ------ Database connection for authentication ------End
 
 const store = new MongoDBStore({
     uri: MONGODB_URI,
